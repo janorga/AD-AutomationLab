@@ -61,8 +61,6 @@ function domainServicesInstallation {
 	Import-Module ServerManager
 	Import-Module ADDSDeployment
 
-	$domainName = "s4vicorp.local"
-
     Write-Output ''
     Write-Host "[*] Desinstalando Windows Defender" -ForegroundColor "yellow"
     Write-Output ''
@@ -122,6 +120,7 @@ function domainServicesInstallation {
 }
 
 function setdomain {
+	$domainName = "s4vicorp.local"
     Write-Output ''
     Write-Host "[*] A continuacion, deberas proporcionar la password del usuario Administrador del dominio" -ForegroundColor "yellow"
     Write-Output ''
