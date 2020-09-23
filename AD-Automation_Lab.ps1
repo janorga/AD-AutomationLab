@@ -97,12 +97,12 @@ function domainServicesInstallation {
 		    Write-Host "[!] Es probable que tras finalizar, sea necesario reiniciar el equipo para que los cambios tengan efecto" -ForegroundColor "red"
 
 			Write-Output ''
-			Write-Host "[*] Desinstalando Windows-Defender..." -ForegroundColor "yellow"
+			Write-Host "[*] NO SE DESINSTALA Windows-Defender..." -ForegroundColor "yellow"
 
-			Uninstall-WindowsFeature -Name Windows-Defender
+			#Uninstall-WindowsFeature -Name Windows-Defender
 
 			Write-Output ''
-			Write-Host "[V] Windows Defender ha sido desinstalado, se va a reiniciar el equipo" -ForegroundColor "green"
+			Write-Host "[V] Windows Defender NO ha sido desinstalado, se va a reiniciar el equipo" -ForegroundColor "green"
 			Write-Output ''
 
 			Start-Sleep -Seconds 5
@@ -118,6 +118,10 @@ function domainServicesInstallation {
 	    Write-host "El Windows Defender se encuentra desinstalado en el servidor:" $env:computername -foregroundcolor "Green"
 	}
 
+    setdomain
+}
+
+function setdomain {
     Write-Output ''
     Write-Host "[*] A continuacion, deberas proporcionar la password del usuario Administrador del dominio" -ForegroundColor "yellow"
     Write-Output ''
@@ -220,3 +224,4 @@ function createAll {
 	createSMBRelay
 	createDNSAdmins
 }
+
